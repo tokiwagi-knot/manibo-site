@@ -1,0 +1,59 @@
+---
+---
+
+// テーマ（jekyll-theme-primer）の見た目をそのまま使い、スマホの幅のときだけ文字と余白を小さくする。
+// テーマは PC の大きさのまま（見出し 32px・本文 16px）で、スマホでは大きすぎたため
+@import "{{ site.theme }}";
+
+// 表が画面より広いと、Android の Chrome が文字を勝手に大きくすることがあるので止める
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (max-width: 600px) {
+  .container-lg {
+    margin-top: 16px !important;
+    margin-bottom: 32px !important;
+  }
+
+  .markdown-body {
+    font-size: 14px;
+    line-height: 1.7;
+
+    // 一番上のサイト名（ManiBo）。どのページにも出るので小さくする
+    > h1:first-child {
+      font-size: 16px;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 21px;
+    }
+
+    h2 {
+      font-size: 17px;
+      margin-top: 20px;
+    }
+
+    h3 {
+      font-size: 15px;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.5em;
+    }
+
+    // 表は横に収まらなければ表だけを横にスクロールする
+    table {
+      font-size: 13px;
+
+      th,
+      td {
+        padding: 6px 8px;
+      }
+    }
+  }
+}

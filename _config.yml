@@ -1,0 +1,7 @@
+# GitHub Pages の設定。Markdown をそのままページにする
+title: ManiBo
+lang: ja
+theme: jekyll-theme-primer
+# アプリが読むお知らせはそのまま出す（ページにしない）
+include: [notices.json]
+exclude: [README.md]
