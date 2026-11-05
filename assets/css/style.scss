@@ -5,6 +5,57 @@
 // テーマは PC の大きさのまま（見出し 32px・本文 16px）で、スマホでは大きすぎたため
 @import "{{ site.theme }}";
 
+// どのページにも出る、上のアプリ名（トップのページでは大きなアイコン）と、下の制作者
+.site-header {
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eaecef;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  img {
+    border-radius: 7px;
+  }
+}
+
+.site-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #eaecef;
+  color: #6a737d;
+  font-size: 12px;
+
+  p {
+    margin: 0;
+  }
+}
+
 // 表が画面より広いと、Android の Chrome が文字を勝手に大きくすることがあるので止める
 html {
   -webkit-text-size-adjust: 100%;
@@ -21,11 +72,9 @@ html {
     font-size: 14px;
     line-height: 1.7;
 
-    // 一番上のサイト名（ManiBo）。どのページにも出るので小さくする
-    > h1:first-child {
-      font-size: 16px;
-      margin-bottom: 8px;
-      padding-bottom: 8px;
+    .site-hero img {
+      width: 72px;
+      height: 72px;
     }
 
     h1 {
